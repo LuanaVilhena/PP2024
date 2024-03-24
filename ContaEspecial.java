@@ -1,20 +1,19 @@
 public class ContaEspecial extends Conta{
-    double limite;
-    boolean sacarEspecial(double valor) {
-        if (this.limite >= valor) {
-            this.limite = this.limite + valor;
+    private double limite;
+    public ContaEspecial() {
+        super();
+    }
+    public ContaEspecial(int numero, double saldo, double limite) {
+        super(numero, saldo);
+        this.limite = limite;
+    }
+    public boolean sacar(double valor) {
+        if (getSaldo() >= valor ) {
+            double novoSaldo = getSaldo() - (valor * 0.99);
+            setSaldo(novoSaldo);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
-    }
-
-    public double getLimite() {
-        return limite;
-    }
-
-    public void setLimite(double limite) {
-        this.limite = limite;
     }
 }

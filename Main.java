@@ -1,26 +1,29 @@
 public class Main {
-
     public static void main(String[] args) {
+        Conta conta1 = new Conta();
+        Conta conta2 = new Conta();
+        Conta contaespecial = new Conta();
+        Conta containvestimento = new Conta();
+        conta1.setNumero(1000);
+        conta1.setSaldo(1000);
+        conta1.depositar(1000);
+        conta2.setNumero(2000);
+        conta2.setSaldo(5000);
+        conta2.depositar(2000);
+        contaespecial.setNumero(3000);
+        contaespecial.setSaldo(3000);
+        contaespecial.depositar(3000);
+        containvestimento.setNumero(4000);
+        containvestimento.setSaldo(4000);
+        containvestimento.depositar(4000);
 
-        Conta c = new Conta();
-        Conta c2 = new ContaEspecial();
-        Conta c3 = new ContaInvestimento();
-
-        c.numero = 1;
-        c.saldo = 10000;
-
-        c2.numero = 2;
-        c2.saldo = 50000;
-
-        c3.numero = 3;
-        c3.saldo = 30000;
-
-        System.out.println("Número da conta 1: " + c.numero);
-        System.out.println("Saldo da conta 1: " + c.saldo);
-        System.out.println("Número da conta especial: " + c2.numero);
-        System.out.println("Saldo da conta especial: " + c2.saldo);
-        System.out.println("Número da conta investimento: " + c3.numero);
-        System.out.println("Saldo da conta investimento: " + c3.saldo);
-
+        System.out.println("Numero da conta 1:" + conta1.getNumero());
+        System.out.println("Saldo do saldo 1:" + conta1.getSaldo());
+        System.out.println("Numero da conta 2:" + conta2.getNumero());
+        System.out.println("Saldo do saldo 2:" + conta2.getSaldo());
+        System.out.println("Numero da contaEspecial:" + contaespecial.getNumero());
+        System.out.println("Saldo da contaEspecial:" + contaespecial.getSaldo());
+        System.out.println("Numero da contaInvestimento:" + containvestimento.getNumero());
+        System.out.println("Saldo da contaInvestimento:" + containvestimento.getSaldo());
     }
 }

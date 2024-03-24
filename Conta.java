@@ -1,7 +1,14 @@
 public class Conta {
-    int numero;
-    double saldo;
-    boolean sacar(double valor) {
+    private int numero;
+    private double saldo;
+    public Conta() {
+        System.out.println("Conta vazia criada!");
+    }
+    public Conta(int numero, double saldo) {
+        this.numero = numero;
+        this.saldo = saldo;
+    }
+    public boolean sacar(double valor) {
         if(this.saldo >= valor) {
             this.saldo = valor - this.saldo;
             return true;
@@ -9,7 +16,7 @@ public class Conta {
         else {
             return false;}
     }
-    boolean depositar(double valor) {
+    public boolean depositar(double valor) {
         if(valor >= 0) {
             this.saldo = this.saldo + valor;
             return true;
@@ -30,8 +37,8 @@ public class Conta {
         return this.saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public void setSaldo(double novoSaldo) {
+        this.saldo = novoSaldo;
     }
 
 }

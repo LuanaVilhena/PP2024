@@ -1,7 +1,11 @@
 public class ContaInvestimento extends Conta {
-    double taxa;
-    int prazo;
-    boolean sacar(double valor) {
+    private double taxa;
+    private int prazo;
+    public ContaInvestimento (double taxa, int prazo) {
+        this.taxa = taxa ;
+        this.prazo = prazo ;
+    }
+    public boolean sacar(double valor) {
         if (this.taxa >= valor) {
             this.taxa = this.taxa - valor;
             return true;
@@ -11,7 +15,7 @@ public class ContaInvestimento extends Conta {
         }
     }
 
-    boolean depositar(double valor) {
+    public boolean depositar(double valor) {
         if (this.taxa >= 0) {
             this.taxa = this.taxa + valor;
             return true;
@@ -22,16 +26,6 @@ public class ContaInvestimento extends Conta {
     }
 
     public void aplicaRendimentos(double taxa) {
-        if (this.taxa >= 0) {
-            this.taxa = this.taxa * taxa;
-        }
-    }
-
-    public int getPrazo() {
-        return prazo;
-    }
-
-    public void setPrazo(int prazo) {
-        this.prazo = prazo;
+        setSaldo(getSaldo() + (1 * taxa));
     }
 }
